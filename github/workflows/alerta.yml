@@ -1,0 +1,15 @@
+name: Alerta - Hola mundo
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notificar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Enviar notificacion
+        run: |
+          curl -d "Se ha realizado un push al repositorio ${GITHUB_REPOSITORY} en la rama ${GITHUB_REF_NAME}" ntfy.sh/devops-itla
